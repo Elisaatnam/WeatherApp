@@ -1,0 +1,277 @@
+@font-face {
+	font-family: Karla;
+	src: url(../fonts/Karla-VariableFont_wght.ttf);
+}
+
+:root {
+	--var1: ;
+	--var2: ;
+	--var3: ;
+}
+
+/* GLOBAL SETTINGS */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: Karla, sans-serif;
+	color: white;
+}
+
+h1 {
+	font-size: 6vw;
+	font-weight: 700;
+	text-shadow: 3px 3px 4px #ffd000;
+	margin-bottom: 2vh;
+}
+
+h2 {
+	font-size: 4vw;
+}
+
+/* +++++++++++++++++  PRELOADER  ++++++++++++++++++++++ */
+@import "compass/css3";
+
+.preloader {
+	opacity: 0;
+	position: absolute;
+	margin-left: -55px;
+	margin-top: -100px;
+	height: 110px;
+	width: 110px;
+	left: 50%;
+	top: 50%;
+	transition: opacity 0.5s ease-in-out;
+}
+
+svg {
+	width: 110px;
+	height: 110px;
+}
+
+path {
+	stroke: white;
+	stroke-width: 0.25;
+	fill: #241e20;
+}
+
+#cloud {
+	position: relative;
+	z-index: 2;
+}
+
+#cloud path {
+	fill: rgb(118, 172, 234);
+}
+
+#sun {
+	margin-left: -10px;
+	margin-top: 6px;
+	opacity: 0;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: 45px;
+	top: 15px;
+	z-index: 1;
+
+	animation-name: rotate;
+	animation-duration: 16000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#sun path {
+	stroke-width: 0.18;
+	fill: #fdcf00fe;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotateZ(0deg);
+	}
+
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+/* Rain */
+.rain {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	margin-top: -32px;
+	margin-left: 19px;
+}
+
+.drop {
+	opacity: 1;
+	background: white;
+	display: block;
+	float: left;
+	width: 3px;
+	height: 10px;
+	margin-left: 4px;
+	border-radius: 0px 0px 6px 6px;
+
+	animation-name: drop;
+	animation-duration: 350ms;
+	animation-iteration-count: infinite;
+}
+
+.drop:nth-child(1) {
+	animation-delay: -130ms;
+}
+
+.drop:nth-child(2) {
+	animation-delay: -240ms;
+}
+
+.drop:nth-child(3) {
+	animation-delay: -390ms;
+}
+
+.drop:nth-child(4) {
+	animation-delay: -525ms;
+}
+
+.drop:nth-child(5) {
+	animation-delay: -640ms;
+}
+
+.drop:nth-child(6) {
+	animation-delay: -790ms;
+}
+
+.drop:nth-child(7) {
+	animation-delay: -900ms;
+}
+
+.drop:nth-child(8) {
+	animation-delay: -1050ms;
+}
+
+.drop:nth-child(9) {
+	animation-delay: -1130ms;
+}
+
+.drop:nth-child(10) {
+	animation-delay: -1300ms;
+}
+
+@keyframes drop {
+	50% {
+		height: 45px;
+		opacity: 0;
+	}
+
+	51% {
+		opacity: 0;
+	}
+
+	100% {
+		height: 1px;
+		opacity: 0;
+	}
+}
+
+.text {
+	letter-spacing: 1px;
+	text-align: center;
+	margin-left: -6vw;
+	font-weight: bold;
+	margin-top: 20px;
+	font-size: 1vw;
+	color: white;
+	width: 20vw;
+}
+
+/* +++++++++++++++++  PRELOADER  ++++++++++++++++++++++ */
+
+/* Wrapper */
+.wrapper {
+	min-height: 100vh;
+	background: linear-gradient(
+		180deg,
+		rgba(76, 132, 203, 1) 12%,
+		rgba(118, 172, 234, 1) 95%
+	);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5vh 5vw;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5vh;
+}
+
+input {
+	font-size: 2vw;
+	border-radius: 10px;
+	padding: 0.75vh;
+	color: rgb(50, 88, 132);
+	margin: 0 0.5vw 0 0;
+}
+
+button {
+	font-size: 2vw;
+	border-radius: 10px;
+	padding: 0.75vh;
+	background-color: rgb(50, 88, 132);
+	color: white;
+	box-shadow: 2px 2px 10px rgb(48, 90, 149);
+	transition: scale 0.5s ease-in-out;
+}
+
+button:hover {
+	transform: scale(1.02);
+	cursor: pointer;
+}
+
+.get-location {
+	margin-bottom: 10vh;
+}
+/* .weather-output */
+.weather-output {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+img {
+	height: 12vh;
+	width: auto;
+	margin-bottom: 2.5vh;
+}
+
+p {
+	display: inline-block;
+	width: 20vw;
+	height: 10vh;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.194);
+	box-shadow: 2px 2px 10px rgb(48, 90, 149);
+	margin: 1vh 0.5vw;
+	padding: 1vh;
+	font-size: 1.2vw;
+	transition: 0.25s ease-in-out;
+}
+
+p:hover {
+	background-color: rgb(83, 152, 232);
+	transform: scale(1.02);
+}
+
+span:not(.drop) {
+	font-size: 1.8vw;
+	font-weight: 700;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding: 2vh;
+}
