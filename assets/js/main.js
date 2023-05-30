@@ -25,7 +25,7 @@ btn.addEventListener("click", () => {
 			console.log({ latitude });
 
 			fetch(
-				`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=0f4e48d5bad8f61ca054d7c5c6001386&lang=de&units=metric`,
+				`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=0f4e48d5bad8f61ca054d7c5c6001386&lang=de&units=metric`,
 			)
 				.then(res => res.json())
 				.then(weatherData => {
